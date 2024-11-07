@@ -9,6 +9,10 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [errors, setErrors] = useState({
+
+  });
+
   const handleNameChange = (event) => {
     setName(event.target.value);
   }

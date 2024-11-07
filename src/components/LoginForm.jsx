@@ -1,6 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [errors, setErrors] = useState({
+    email: "",
+    password: ""
+  });
+
+  useEffect((e)=>{
+
+  }, email)
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  }
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
+
   return (
     <form 
       onSubmit={e=>e.preventDefault()}
@@ -14,6 +33,8 @@ function LoginForm() {
           type="text" 
           name="email" 
           placeholder='Podaj email'
+          value={email}
+          onChange={handleEmailChange}
           className='form-control'
           />
       </div>
@@ -23,6 +44,7 @@ function LoginForm() {
           type="password" 
           name="password" 
           placeholder='Podaj hasło'
+          onChange={handlePasswordChange}
           className='form-control'
           />
       </div>
